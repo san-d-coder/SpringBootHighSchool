@@ -1,0 +1,1 @@
+This is a simple SpringBoot app that creates a REST API for a High School
