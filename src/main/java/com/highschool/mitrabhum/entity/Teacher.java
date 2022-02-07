@@ -19,7 +19,7 @@ public class Teacher {
 	private String teacherEmail = "";
 	
 	@ManyToOne
-	private Department teacherDepartment = null;
+	private Department teacherDepartment;
 	
 	public Teacher() {}
 
@@ -71,6 +71,14 @@ public class Teacher {
 
 	public void setTeacherEmail(String teacherEmail) {
 		this.teacherEmail = teacherEmail;
+	}
+
+	public Department getTeacherDepartment() {
+		return teacherDepartment;
+	}
+
+	public void setTeacherDepartment(Department teacherDepartment) {
+		this.teacherDepartment = teacherDepartment;
 	}
 
 	@Override

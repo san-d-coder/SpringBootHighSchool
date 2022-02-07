@@ -3,6 +3,7 @@ package com.highschool.mitrabhum.entity;
 import java.util.Objects;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -19,8 +20,8 @@ public class Student {
 	private long studentContactNumber = 0;
 	private String studentEmailAddress = "";
 	
-	@ManyToOne
-	private Department studentDepartment = null;
+	@ManyToOne(fetch = FetchType.EAGER)
+	private Department studentDepartment;
 	
 	public Student() {
 		
@@ -74,6 +75,14 @@ public class Student {
 
 	public void setStudentEmailAddress(String studentEmailAddress) {
 		this.studentEmailAddress = studentEmailAddress;
+	}
+
+	public Department getStudentDepartment() {
+		return studentDepartment;
+	}
+
+	public void setStudentDepartment(Department studentDepartment) {
+		this.studentDepartment = studentDepartment;
 	}
 
 	@Override

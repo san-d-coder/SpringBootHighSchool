@@ -3,6 +3,7 @@ package com.highschool.mitrabhum.entity;
 import java.util.List;
 import java.util.Objects;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,12 +15,12 @@ public class Department {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int departmentID = 0;
-	private int departmentName = 0;
+	private String departmentName = "";
 	
-	@OneToMany(mappedBy = "studentDepartment")
+	@OneToMany(mappedBy = "studentDepartment", cascade = CascadeType.ALL)
 	private List<Student> students = null;
 	
-	@OneToMany(mappedBy = "teacherDepartment")
+	@OneToMany(mappedBy = "teacherDepartment", cascade = CascadeType.ALL)
 	private List<Teacher> teachers = null;
 	
 	public int getDepartmentID() {
@@ -28,10 +29,10 @@ public class Department {
 	public void setDepartmentID(int departmentID) {
 		this.departmentID = departmentID;
 	}
-	public int getDepartmentName() {
+	public String getDepartmentName() {
 		return departmentName;
 	}
-	public void setDepartmentName(int departmentName) {
+	public void setDepartmentName(String departmentName) {
 		this.departmentName = departmentName;
 	}
 	
