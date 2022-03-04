@@ -10,7 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-
 public class Student {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -28,13 +27,14 @@ public class Student {
 	}
 
 	public Student(int studentId, String studentFirstName, String studentLastName, long studentContactNumber,
-			String studentEmailAddress) {
+			String studentEmailAddress, Department studentDepartment) {
 		super();
 		this.studentId = studentId;
 		this.studentFirstName = studentFirstName;
 		this.studentLastName = studentLastName;
 		this.studentContactNumber = studentContactNumber;
 		this.studentEmailAddress = studentEmailAddress;
+		this.studentDepartment = studentDepartment;
 	}
 
 	public int getStudentId() {

@@ -23,6 +23,14 @@ public class Department {
 	@OneToMany(mappedBy = "teacherDepartment", cascade = CascadeType.ALL)
 	private List<Teacher> teachers = null;
 	
+	public Department() {}
+	
+	public Department(int departmentID, String departmentName) {
+		super();
+		this.departmentID = departmentID;
+		this.departmentName = departmentName;
+	}
+
 	public int getDepartmentID() {
 		return departmentID;
 	}
