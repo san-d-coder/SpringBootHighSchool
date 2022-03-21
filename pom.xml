@@ -15,7 +15,7 @@
 	<name>Mitrabhum High School</name>
 	<description>Unofficial Website of Mitrabhum High School</description>
 	<properties>
-		<java.version>16</java.version>
+		<java.version>1.8</java.version>
 	</properties>
 	<profiles>
 		<profile>

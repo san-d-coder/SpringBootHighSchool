@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.highschool.mitrabhum.advice.InvalidTeacherException;
+import com.highschool.mitrabhum.advice.NotFoundException;
 import com.highschool.mitrabhum.entity.Teacher;
 import com.highschool.mitrabhum.service.TeacherService;
 
@@ -24,7 +26,7 @@ public class TeacherController {
 	private TeacherService teacherService;
 	
 	@GetMapping(value = "get/{teacherService}", produces = "application/json")
-	public Teacher getTeacher(@PathVariable int teacherService) {
+	public Teacher getTeacher(@PathVariable int teacherService) throws NotFoundException {
 		return this.teacherService.getTeacher(teacherService);
 	}
 	
@@ -34,7 +36,7 @@ public class TeacherController {
 	}
 	
 	@PostMapping(value = "create")
-	public Teacher createTeacher(@RequestBody Teacher Teacher) {
+	public Teacher createTeacher(@RequestBody Teacher Teacher) throws InvalidTeacherException {
 		return this.teacherService.createTeacher(Teacher);
 	}
 	

@@ -885,3 +885,632 @@ org.springframework.data.mapping.PropertyReferenceException: No property id foun
 2022-02-22 01:28:54.467 TRACE 19648 --- [http-nio-8008-exec-3] s.w.s.m.m.a.RequestMappingHandlerAdapter : Applying default cacheSeconds=-1
 2022-02-22 01:28:54.467 TRACE 19648 --- [http-nio-8008-exec-3] o.s.web.servlet.DispatcherServlet        : No view rendering, null ModelAndView returned.
 2022-02-22 01:28:54.468 DEBUG 19648 --- [http-nio-8008-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK, headers={masked}
+2022-03-20 01:10:27.860  INFO 8508 --- [main] .h.m.MitrabhumHighSchoolApplicationTests : Starting MitrabhumHighSchoolApplicationTests using Java 15.0.1 on DESKTOP-M02F0OH with PID 8508 (started by AliMandal in C:\Users\AliMandal\development\Projects\Mitrabhum\SpringBootHighSchool)
+2022-03-20 01:10:27.861 DEBUG 8508 --- [main] .h.m.MitrabhumHighSchoolApplicationTests : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-20 01:10:27.862  INFO 8508 --- [main] .h.m.MitrabhumHighSchoolApplicationTests : The following profiles are active: dev
+2022-03-20 01:10:27.898 TRACE 8508 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@363f6148, started on Sun Mar 20 01:10:27 IST 2022
+2022-03-20 01:10:29.180  INFO 8508 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-20 01:10:29.288  INFO 8508 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 94 ms. Found 3 JPA repository interfaces.
+2022-03-20 01:10:29.763 TRACE 8508 --- [main] o.s.w.c.s.GenericWebApplicationContext   : No 'messageSource' bean, using [Empty MessageSource]
+2022-03-20 01:10:29.763 TRACE 8508 --- [main] o.s.w.c.s.GenericWebApplicationContext   : No 'applicationEventMulticaster' bean, using [SimpleApplicationEventMulticaster]
+2022-03-20 01:10:30.036  INFO 8508 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-03-20 01:10:30.095  INFO 8508 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.4.Final
+2022-03-20 01:10:30.283  INFO 8508 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-03-20 01:10:30.564  INFO 8508 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-03-20 01:10:30.819  INFO 8508 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-03-20 01:10:30.843  INFO 8508 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-03-20 01:10:31.660  INFO 8508 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-03-20 01:10:31.671  INFO 8508 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-20 01:10:32.477  WARN 8508 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-20 01:10:32.974 DEBUG 8508 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-03-20 01:10:33.021  INFO 8508 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:mitrabhum'
+2022-03-20 01:10:33.078 TRACE 8508 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.h.m.c.DepartmentController:
+	{POST [/department/create]}: createDepartment(Department)
+	{GET [/department/getAll]}: getDepartments()
+2022-03-20 01:10:33.086 TRACE 8508 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.h.m.c.StudentController:
+	{GET [/student/get/{studentId}], produces [application/json]}: getStudent(int)
+	{GET [/student/getAll], produces [application/json]}: getStudents()
+	{POST [/student/create]}: createStudent(Student)
+	{GET [/student/getAll/page/{offset}/{pageSize}/{sortingField}]}: getStudentsWithPaginationAndSorting(int,int,String)
+	{GET [/student/getAll/sorted/{sortingField}]}: getStudentsSorted(String)
+	{GET [/student/count], produces [application/json]}: countStudentsById()
+	{DELETE [/student/delete/{studentId}]}: deleteStudent(int)
+	{GET [/student/getAll/page/{offset}/{pageSize}]}: getStudentsWithPagination(int,int)
+2022-03-20 01:10:33.092 TRACE 8508 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.h.m.c.TeacherController:
+	{DELETE [/teacher/delete/{teacherService}]}: deleteTeacher(int)
+	{GET [/teacher/get/{teacherService}], produces [application/json]}: getTeacher(int)
+	{GET [/teacher/getAll], produces [application/json]}: getTeachers()
+	{POST [/teacher/create]}: createTeacher(Teacher)
+2022-03-20 01:10:33.097 TRACE 8508 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+2022-03-20 01:10:33.118 TRACE 8508 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.w.a.OpenApiWebMvcResource:
+	{GET [/v3/api-docs], produces [application/json]}: openapiJson(HttpServletRequest,String,Locale)
+	{GET [/v3/api-docs.yaml], produces [application/vnd.oai.openapi]}: openapiYaml(HttpServletRequest,String,Locale)
+2022-03-20 01:10:33.120 TRACE 8508 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.w.u.SwaggerWelcomeWebMvc:
+	{GET [/swagger-ui.html]}: redirectToUi(HttpServletRequest)
+2022-03-20 01:10:33.123 TRACE 8508 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.w.u.SwaggerConfigResource:
+	{GET [/v3/api-docs/swagger-config], produces [application/json]}: openapiJson(HttpServletRequest)
+2022-03-20 01:10:33.127 DEBUG 8508 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 20 mappings in 'requestMappingHandlerMapping'
+2022-03-20 01:10:33.185 DEBUG 8508 --- [main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Detected 0 mappings in 'beanNameHandlerMapping'
+2022-03-20 01:10:33.199 TRACE 8508 --- [main] o.s.w.s.f.support.RouterFunctionMapping  : 0 RouterFunction(s) in 'routerFunctionMapping'
+2022-03-20 01:10:34.069 TRACE 8508 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/webjars/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2022-03-20 01:10:34.070 TRACE 8508 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-03-20 01:10:34.071 TRACE 8508 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/swagger-ui*/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2022-03-20 01:10:34.071 DEBUG 8508 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/**] in 'resourceHandlerMapping'
+2022-03-20 01:10:34.093 DEBUG 8508 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-03-20 01:10:34.673  INFO 8508 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-03-20 01:10:34.686 TRACE 8508 --- [main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Register "{GET [/actuator/health], produces [application/vnd.spring-boot.actuator.v3+json || application/vnd.spring-boot.actuator.v2+json || application/json]}" to java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2022-03-20 01:10:34.687 TRACE 8508 --- [main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Register "{GET [/actuator/health/**], produces [application/vnd.spring-boot.actuator.v3+json || application/vnd.spring-boot.actuator.v2+json || application/json]}" to java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2022-03-20 01:10:34.688 TRACE 8508 --- [main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Register "{GET [/actuator], produces [application/vnd.spring-boot.actuator.v3+json || application/vnd.spring-boot.actuator.v2+json || application/json]}" to public java.util.Map<java.lang.String, java.util.Map<java.lang.String, org.springframework.boot.actuate.endpoint.web.Link>> org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping$WebMvcLinksHandler.links(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2022-03-20 01:10:34.717 TRACE 8508 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Using LifecycleProcessor [org.springframework.context.support.DefaultLifecycleProcessor@7e1ce99c]
+2022-03-20 01:10:34.744  INFO 8508 --- [main] .h.m.MitrabhumHighSchoolApplicationTests : Started MitrabhumHighSchoolApplicationTests in 7.247 seconds (JVM running for 8.244)
+2022-03-20 01:10:35.368 DEBUG 8508 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@363f6148, started on Sun Mar 20 01:10:27 IST 2022
+2022-03-20 01:10:35.375  INFO 8508 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-03-20 01:10:35.376  INFO 8508 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-03-20 01:10:35.382  INFO 8508 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-03-20 01:10:35.385  INFO 8508 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-03-20 01:16:16.553  INFO 14584 --- [main] .h.m.MitrabhumHighSchoolApplicationTests : Starting MitrabhumHighSchoolApplicationTests using Java 15.0.1 on DESKTOP-M02F0OH with PID 14584 (started by AliMandal in C:\Users\AliMandal\development\Projects\Mitrabhum\SpringBootHighSchool)
+2022-03-20 01:16:16.555 DEBUG 14584 --- [main] .h.m.MitrabhumHighSchoolApplicationTests : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-20 01:16:16.555  INFO 14584 --- [main] .h.m.MitrabhumHighSchoolApplicationTests : The following profiles are active: dev
+2022-03-20 01:16:16.601 TRACE 14584 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@363f6148, started on Sun Mar 20 01:16:16 IST 2022
+2022-03-20 01:16:17.794  INFO 14584 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-20 01:16:17.902  INFO 14584 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 93 ms. Found 3 JPA repository interfaces.
+2022-03-20 01:16:18.402 TRACE 14584 --- [main] o.s.w.c.s.GenericWebApplicationContext   : No 'messageSource' bean, using [Empty MessageSource]
+2022-03-20 01:16:18.402 TRACE 14584 --- [main] o.s.w.c.s.GenericWebApplicationContext   : No 'applicationEventMulticaster' bean, using [SimpleApplicationEventMulticaster]
+2022-03-20 01:16:18.717  INFO 14584 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-03-20 01:16:18.783  INFO 14584 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.4.Final
+2022-03-20 01:16:19.001  INFO 14584 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-03-20 01:16:19.252  INFO 14584 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-03-20 01:16:19.530  INFO 14584 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-03-20 01:16:19.555  INFO 14584 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-03-20 01:16:20.392  INFO 14584 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-03-20 01:16:20.398  INFO 14584 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-20 01:16:21.193  WARN 14584 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-20 01:16:21.654 DEBUG 14584 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-03-20 01:16:21.695  INFO 14584 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:mitrabhum'
+2022-03-20 01:16:21.757 TRACE 14584 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.h.m.c.DepartmentController:
+	{POST [/department/create]}: createDepartment(Department)
+	{GET [/department/getAll]}: getDepartments()
+2022-03-20 01:16:21.765 TRACE 14584 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.h.m.c.StudentController:
+	{GET [/student/get/{studentId}], produces [application/json]}: getStudent(int)
+	{POST [/student/create]}: createStudent(Student)
+	{GET [/student/getAll], produces [application/json]}: getStudents()
+	{GET [/student/getAll/page/{offset}/{pageSize}/{sortingField}]}: getStudentsWithPaginationAndSorting(int,int,String)
+	{GET [/student/getAll/page/{offset}/{pageSize}]}: getStudentsWithPagination(int,int)
+	{DELETE [/student/delete/{studentId}]}: deleteStudent(int)
+	{GET [/student/getAll/sorted/{sortingField}]}: getStudentsSorted(String)
+	{GET [/student/count], produces [application/json]}: countStudentsById()
+2022-03-20 01:16:21.770 TRACE 14584 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.h.m.c.TeacherController:
+	{GET [/teacher/get/{teacherService}], produces [application/json]}: getTeacher(int)
+	{DELETE [/teacher/delete/{teacherService}]}: deleteTeacher(int)
+	{GET [/teacher/getAll], produces [application/json]}: getTeachers()
+	{POST [/teacher/create]}: createTeacher(Teacher)
+2022-03-20 01:16:21.775 TRACE 14584 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+2022-03-20 01:16:21.798 TRACE 14584 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.w.a.OpenApiWebMvcResource:
+	{GET [/v3/api-docs.yaml], produces [application/vnd.oai.openapi]}: openapiYaml(HttpServletRequest,String,Locale)
+	{GET [/v3/api-docs], produces [application/json]}: openapiJson(HttpServletRequest,String,Locale)
+2022-03-20 01:16:21.801 TRACE 14584 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.w.u.SwaggerWelcomeWebMvc:
+	{GET [/swagger-ui.html]}: redirectToUi(HttpServletRequest)
+2022-03-20 01:16:21.803 TRACE 14584 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.w.u.SwaggerConfigResource:
+	{GET [/v3/api-docs/swagger-config], produces [application/json]}: openapiJson(HttpServletRequest)
+2022-03-20 01:16:21.807 DEBUG 14584 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 20 mappings in 'requestMappingHandlerMapping'
+2022-03-20 01:16:21.867 DEBUG 14584 --- [main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Detected 0 mappings in 'beanNameHandlerMapping'
+2022-03-20 01:16:21.882 TRACE 14584 --- [main] o.s.w.s.f.support.RouterFunctionMapping  : 0 RouterFunction(s) in 'routerFunctionMapping'
+2022-03-20 01:16:22.957 TRACE 14584 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/webjars/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2022-03-20 01:16:22.958 TRACE 14584 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-03-20 01:16:22.959 TRACE 14584 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/swagger-ui*/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2022-03-20 01:16:22.959 DEBUG 14584 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/**] in 'resourceHandlerMapping'
+2022-03-20 01:16:22.981 DEBUG 14584 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-03-20 01:16:23.536  INFO 14584 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-03-20 01:16:23.546 TRACE 14584 --- [main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Register "{GET [/actuator/health/**], produces [application/vnd.spring-boot.actuator.v3+json || application/vnd.spring-boot.actuator.v2+json || application/json]}" to java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2022-03-20 01:16:23.547 TRACE 14584 --- [main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Register "{GET [/actuator/health], produces [application/vnd.spring-boot.actuator.v3+json || application/vnd.spring-boot.actuator.v2+json || application/json]}" to java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2022-03-20 01:16:23.549 TRACE 14584 --- [main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Register "{GET [/actuator], produces [application/vnd.spring-boot.actuator.v3+json || application/vnd.spring-boot.actuator.v2+json || application/json]}" to public java.util.Map<java.lang.String, java.util.Map<java.lang.String, org.springframework.boot.actuate.endpoint.web.Link>> org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping$WebMvcLinksHandler.links(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2022-03-20 01:16:23.581 TRACE 14584 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Using LifecycleProcessor [org.springframework.context.support.DefaultLifecycleProcessor@7552f05b]
+2022-03-20 01:16:23.611  INFO 14584 --- [main] .h.m.MitrabhumHighSchoolApplicationTests : Started MitrabhumHighSchoolApplicationTests in 7.412 seconds (JVM running for 8.395)
+2022-03-20 01:16:24.231 DEBUG 14584 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@363f6148, started on Sun Mar 20 01:16:16 IST 2022
+2022-03-20 01:16:24.240  INFO 14584 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-03-20 01:16:24.241  INFO 14584 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-03-20 01:16:24.247  INFO 14584 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-03-20 01:16:24.250  INFO 14584 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-03-20 01:17:27.078  INFO 1776 --- [restartedMain] c.h.m.MitrabhumHighSchoolApplication     : Starting MitrabhumHighSchoolApplication using Java 15.0.1 on DESKTOP-M02F0OH with PID 1776 (C:\Users\AliMandal\development\Projects\Mitrabhum\SpringBootHighSchool\target\classes started by AliMandal in C:\Users\AliMandal\development\Projects\Mitrabhum\SpringBootHighSchool)
+2022-03-20 01:17:27.079 DEBUG 1776 --- [restartedMain] c.h.m.MitrabhumHighSchoolApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-20 01:17:27.080  INFO 1776 --- [restartedMain] c.h.m.MitrabhumHighSchoolApplication     : The following profiles are active: dev
+2022-03-20 01:17:27.136  INFO 1776 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-20 01:17:28.405  INFO 1776 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-20 01:17:28.508  INFO 1776 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 88 ms. Found 3 JPA repository interfaces.
+2022-03-20 01:17:29.480  INFO 1776 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8008 (http)
+2022-03-20 01:17:29.494  INFO 1776 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-20 01:17:29.495  INFO 1776 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-03-20 01:17:29.650  INFO 1776 --- [restartedMain] o.a.c.c.C.[.[.[/mitrabhum-dev]           : Initializing Spring embedded WebApplicationContext
+2022-03-20 01:17:29.651  INFO 1776 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2514 ms
+2022-03-20 01:17:29.835  INFO 1776 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-03-20 01:17:30.072  INFO 1776 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-03-20 01:17:30.088  INFO 1776 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:mitrabhum'
+2022-03-20 01:17:30.131 TRACE 1776 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Added existing Filter initializer bean 'webMvcMetricsFilter'; order=-2147483647, resource=class path resource [org/springframework/boot/actuate/autoconfigure/metrics/web/servlet/WebMvcMetricsAutoConfiguration.class]
+2022-03-20 01:17:30.131 TRACE 1776 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Added existing Servlet initializer bean 'dispatcherServletRegistration'; order=2147483647, resource=class path resource [org/springframework/boot/autoconfigure/web/servlet/DispatcherServletAutoConfiguration$DispatcherServletRegistrationConfiguration.class]
+2022-03-20 01:17:30.132 TRACE 1776 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Added existing Servlet initializer bean 'h2Console'; order=2147483647, resource=class path resource [org/springframework/boot/autoconfigure/h2/H2ConsoleAutoConfiguration.class]
+2022-03-20 01:17:30.133 TRACE 1776 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Added existing ServletContextInitializer initializer bean 'servletEndpointRegistrar'; order=2147483647, resource=class path resource [org/springframework/boot/actuate/autoconfigure/endpoint/web/ServletEndpointManagementContextConfiguration$WebMvcServletEndpointManagementContextConfiguration.class]
+2022-03-20 01:17:30.149 TRACE 1776 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Created Filter initializer for bean 'characterEncodingFilter'; order=-2147483648, resource=class path resource [org/springframework/boot/autoconfigure/web/servlet/HttpEncodingAutoConfiguration.class]
+2022-03-20 01:17:30.150 TRACE 1776 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Created Filter initializer for bean 'formContentFilter'; order=-9900, resource=class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration.class]
+2022-03-20 01:17:30.150 TRACE 1776 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Created Filter initializer for bean 'requestContextFilter'; order=-105, resource=class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]
+2022-03-20 01:17:30.163 DEBUG 1776 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: filterRegistrationBean urls=[/*] order=-2147483647, characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2022-03-20 01:17:30.164 DEBUG 1776 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], webServlet urls=[/h2-console/*]
+2022-03-20 01:17:30.417  INFO 1776 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-03-20 01:17:30.486  INFO 1776 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.4.Final
+2022-03-20 01:17:30.739  INFO 1776 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-03-20 01:17:30.896  INFO 1776 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-03-20 01:17:31.747  INFO 1776 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-03-20 01:17:31.757  INFO 1776 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-20 01:17:32.404  WARN 1776 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-20 01:17:32.574 DEBUG 1776 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-03-20 01:17:32.675 TRACE 1776 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.h.m.c.DepartmentController:
+	{POST [/department/create]}: createDepartment(Department)
+	{GET [/department/getAll]}: getDepartments()
+2022-03-20 01:17:32.682 TRACE 1776 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.h.m.c.StudentController:
+	{GET [/student/getAll/page/{offset}/{pageSize}]}: getStudentsWithPagination(int,int)
+	{GET [/student/count], produces [application/json]}: countStudentsById()
+	{GET [/student/getAll], produces [application/json]}: getStudents()
+	{GET [/student/getAll/sorted/{sortingField}]}: getStudentsSorted(String)
+	{GET [/student/get/{studentId}], produces [application/json]}: getStudent(int)
+	{DELETE [/student/delete/{studentId}]}: deleteStudent(int)
+	{POST [/student/create]}: createStudent(Student)
+	{GET [/student/getAll/page/{offset}/{pageSize}/{sortingField}]}: getStudentsWithPaginationAndSorting(int,int,String)
+2022-03-20 01:17:32.688 TRACE 1776 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.h.m.c.TeacherController:
+	{GET [/teacher/get/{teacherService}], produces [application/json]}: getTeacher(int)
+	{POST [/teacher/create]}: createTeacher(Teacher)
+	{DELETE [/teacher/delete/{teacherService}]}: deleteTeacher(int)
+	{GET [/teacher/getAll], produces [application/json]}: getTeachers()
+2022-03-20 01:17:32.693 TRACE 1776 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+2022-03-20 01:17:32.712 TRACE 1776 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.w.a.OpenApiWebMvcResource:
+	{GET [/v3/api-docs], produces [application/json]}: openapiJson(HttpServletRequest,String,Locale)
+	{GET [/v3/api-docs.yaml], produces [application/vnd.oai.openapi]}: openapiYaml(HttpServletRequest,String,Locale)
+2022-03-20 01:17:32.714 TRACE 1776 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.w.u.SwaggerWelcomeWebMvc:
+	{GET [/swagger-ui.html]}: redirectToUi(HttpServletRequest)
+2022-03-20 01:17:32.717 TRACE 1776 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.w.u.SwaggerConfigResource:
+	{GET [/v3/api-docs/swagger-config], produces [application/json]}: openapiJson(HttpServletRequest)
+2022-03-20 01:17:32.722 DEBUG 1776 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 20 mappings in 'requestMappingHandlerMapping'
+2022-03-20 01:17:32.751 DEBUG 1776 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Detected 0 mappings in 'beanNameHandlerMapping'
+2022-03-20 01:17:32.759 TRACE 1776 --- [restartedMain] o.s.w.s.f.support.RouterFunctionMapping  : 0 RouterFunction(s) in 'routerFunctionMapping'
+2022-03-20 01:17:33.637 TRACE 1776 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/webjars/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2022-03-20 01:17:33.638 TRACE 1776 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-03-20 01:17:33.638 TRACE 1776 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/swagger-ui*/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2022-03-20 01:17:33.639 DEBUG 1776 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/**] in 'resourceHandlerMapping'
+2022-03-20 01:17:33.657 DEBUG 1776 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-03-20 01:17:34.008  INFO 1776 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-03-20 01:17:34.016  INFO 1776 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-03-20 01:17:34.020 TRACE 1776 --- [restartedMain] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Register "{GET [/actuator/health], produces [application/vnd.spring-boot.actuator.v3+json || application/vnd.spring-boot.actuator.v2+json || application/json]}" to java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2022-03-20 01:17:34.020 TRACE 1776 --- [restartedMain] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Register "{GET [/actuator/health/**], produces [application/vnd.spring-boot.actuator.v3+json || application/vnd.spring-boot.actuator.v2+json || application/json]}" to java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2022-03-20 01:17:34.022 TRACE 1776 --- [restartedMain] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Register "{GET [/actuator], produces [application/vnd.spring-boot.actuator.v3+json || application/vnd.spring-boot.actuator.v2+json || application/json]}" to public java.util.Map<java.lang.String, java.util.Map<java.lang.String, org.springframework.boot.actuate.endpoint.web.Link>> org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping$WebMvcLinksHandler.links(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2022-03-20 01:17:34.077  INFO 1776 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8008 (http) with context path '/mitrabhum-dev'
+2022-03-20 01:17:34.105  INFO 1776 --- [restartedMain] c.h.m.MitrabhumHighSchoolApplication     : Started MitrabhumHighSchoolApplication in 7.433 seconds (JVM running for 7.935)
+2022-03-20 01:19:42.138  INFO 3268 --- [restartedMain] c.h.m.MitrabhumHighSchoolApplication     : Starting MitrabhumHighSchoolApplication using Java 15.0.1 on DESKTOP-M02F0OH with PID 3268 (C:\Users\AliMandal\development\Projects\Mitrabhum\SpringBootHighSchool\target\classes started by AliMandal in C:\Users\AliMandal\development\Projects\Mitrabhum\SpringBootHighSchool)
+2022-03-20 01:19:42.139 DEBUG 3268 --- [restartedMain] c.h.m.MitrabhumHighSchoolApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-20 01:19:42.140  INFO 3268 --- [restartedMain] c.h.m.MitrabhumHighSchoolApplication     : The following profiles are active: dev
+2022-03-20 01:19:42.204  INFO 3268 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-20 01:19:43.477  INFO 3268 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-20 01:19:43.567  INFO 3268 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 76 ms. Found 3 JPA repository interfaces.
+2022-03-20 01:19:44.486  INFO 3268 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8008 (http)
+2022-03-20 01:19:44.498  INFO 3268 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-20 01:19:44.499  INFO 3268 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-03-20 01:19:44.649  INFO 3268 --- [restartedMain] o.a.c.c.C.[.[.[/mitrabhum-dev]           : Initializing Spring embedded WebApplicationContext
+2022-03-20 01:19:44.649  INFO 3268 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2444 ms
+2022-03-20 01:19:44.825  INFO 3268 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-03-20 01:19:45.048  INFO 3268 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-03-20 01:19:45.063  INFO 3268 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:mitrabhum'
+2022-03-20 01:19:45.099 TRACE 3268 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Added existing Filter initializer bean 'webMvcMetricsFilter'; order=-2147483647, resource=class path resource [org/springframework/boot/actuate/autoconfigure/metrics/web/servlet/WebMvcMetricsAutoConfiguration.class]
+2022-03-20 01:19:45.099 TRACE 3268 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Added existing Servlet initializer bean 'dispatcherServletRegistration'; order=2147483647, resource=class path resource [org/springframework/boot/autoconfigure/web/servlet/DispatcherServletAutoConfiguration$DispatcherServletRegistrationConfiguration.class]
+2022-03-20 01:19:45.099 TRACE 3268 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Added existing Servlet initializer bean 'h2Console'; order=2147483647, resource=class path resource [org/springframework/boot/autoconfigure/h2/H2ConsoleAutoConfiguration.class]
+2022-03-20 01:19:45.100 TRACE 3268 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Added existing ServletContextInitializer initializer bean 'servletEndpointRegistrar'; order=2147483647, resource=class path resource [org/springframework/boot/actuate/autoconfigure/endpoint/web/ServletEndpointManagementContextConfiguration$WebMvcServletEndpointManagementContextConfiguration.class]
+2022-03-20 01:19:45.113 TRACE 3268 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Created Filter initializer for bean 'characterEncodingFilter'; order=-2147483648, resource=class path resource [org/springframework/boot/autoconfigure/web/servlet/HttpEncodingAutoConfiguration.class]
+2022-03-20 01:19:45.113 TRACE 3268 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Created Filter initializer for bean 'formContentFilter'; order=-9900, resource=class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration.class]
+2022-03-20 01:19:45.114 TRACE 3268 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Created Filter initializer for bean 'requestContextFilter'; order=-105, resource=class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]
+2022-03-20 01:19:45.121 DEBUG 3268 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: filterRegistrationBean urls=[/*] order=-2147483647, characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2022-03-20 01:19:45.122 DEBUG 3268 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], webServlet urls=[/h2-console/*]
+2022-03-20 01:19:45.357  INFO 3268 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-03-20 01:19:45.431  INFO 3268 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.4.Final
+2022-03-20 01:19:45.681  INFO 3268 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-03-20 01:19:45.830  INFO 3268 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-03-20 01:19:46.587  INFO 3268 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-03-20 01:19:46.595  INFO 3268 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-20 01:19:47.126  WARN 3268 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-20 01:19:47.270 DEBUG 3268 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-03-20 01:19:47.348 TRACE 3268 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.h.m.c.DepartmentController:
+	{POST [/department/create]}: createDepartment(Department)
+	{GET [/department/getAll]}: getDepartments()
+2022-03-20 01:19:47.354 TRACE 3268 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.h.m.c.StudentController:
+	{GET [/student/getAll/page/{offset}/{pageSize}]}: getStudentsWithPagination(int,int)
+	{GET [/student/get/{studentId}], produces [application/json]}: getStudent(int)
+	{GET [/student/getAll], produces [application/json]}: getStudents()
+	{GET [/student/getAll/sorted/{sortingField}]}: getStudentsSorted(String)
+	{POST [/student/create]}: createStudent(Student)
+	{GET [/student/count], produces [application/json]}: countStudentsById()
+	{DELETE [/student/delete/{studentId}]}: deleteStudent(int)
+	{GET [/student/getAll/page/{offset}/{pageSize}/{sortingField}]}: getStudentsWithPaginationAndSorting(int,int,String)
+2022-03-20 01:19:47.358 TRACE 3268 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.h.m.c.TeacherController:
+	{GET [/teacher/getAll], produces [application/json]}: getTeachers()
+	{DELETE [/teacher/delete/{teacherService}]}: deleteTeacher(int)
+	{POST [/teacher/create]}: createTeacher(Teacher)
+	{GET [/teacher/get/{teacherService}], produces [application/json]}: getTeacher(int)
+2022-03-20 01:19:47.362 TRACE 3268 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+2022-03-20 01:19:47.383 TRACE 3268 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.w.a.OpenApiWebMvcResource:
+	{GET [/v3/api-docs], produces [application/json]}: openapiJson(HttpServletRequest,String,Locale)
+	{GET [/v3/api-docs.yaml], produces [application/vnd.oai.openapi]}: openapiYaml(HttpServletRequest,String,Locale)
+2022-03-20 01:19:47.384 TRACE 3268 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.w.u.SwaggerWelcomeWebMvc:
+	{GET [/swagger-ui.html]}: redirectToUi(HttpServletRequest)
+2022-03-20 01:19:47.386 TRACE 3268 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.w.u.SwaggerConfigResource:
+	{GET [/v3/api-docs/swagger-config], produces [application/json]}: openapiJson(HttpServletRequest)
+2022-03-20 01:19:47.389 DEBUG 3268 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 20 mappings in 'requestMappingHandlerMapping'
+2022-03-20 01:19:47.407 DEBUG 3268 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Detected 0 mappings in 'beanNameHandlerMapping'
+2022-03-20 01:19:47.412 TRACE 3268 --- [restartedMain] o.s.w.s.f.support.RouterFunctionMapping  : 0 RouterFunction(s) in 'routerFunctionMapping'
+2022-03-20 01:19:48.107 TRACE 3268 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/webjars/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2022-03-20 01:19:48.108 TRACE 3268 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-03-20 01:19:48.109 TRACE 3268 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/swagger-ui*/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2022-03-20 01:19:48.109 DEBUG 3268 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/**] in 'resourceHandlerMapping'
+2022-03-20 01:19:48.122 DEBUG 3268 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-03-20 01:19:48.417  INFO 3268 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-03-20 01:19:48.426  INFO 3268 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-03-20 01:19:48.430 TRACE 3268 --- [restartedMain] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Register "{GET [/actuator/health/**], produces [application/vnd.spring-boot.actuator.v3+json || application/vnd.spring-boot.actuator.v2+json || application/json]}" to java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2022-03-20 01:19:48.431 TRACE 3268 --- [restartedMain] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Register "{GET [/actuator/health], produces [application/vnd.spring-boot.actuator.v3+json || application/vnd.spring-boot.actuator.v2+json || application/json]}" to java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2022-03-20 01:19:48.432 TRACE 3268 --- [restartedMain] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Register "{GET [/actuator], produces [application/vnd.spring-boot.actuator.v3+json || application/vnd.spring-boot.actuator.v2+json || application/json]}" to public java.util.Map<java.lang.String, java.util.Map<java.lang.String, org.springframework.boot.actuate.endpoint.web.Link>> org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping$WebMvcLinksHandler.links(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2022-03-20 01:19:48.493  INFO 3268 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8008 (http) with context path '/mitrabhum-dev'
+2022-03-20 01:19:48.514  INFO 3268 --- [restartedMain] c.h.m.MitrabhumHighSchoolApplication     : Started MitrabhumHighSchoolApplication in 6.815 seconds (JVM running for 7.36)
+2022-03-20 01:21:04.439  INFO 3268 --- [Thread-6] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-03-20 01:21:04.439  INFO 3268 --- [Thread-6] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-03-20 01:21:04.676  WARN 3268 --- [Thread-6] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2022-03-20 01:21:04.676  INFO 3268 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-03-20 01:21:04.676  INFO 3268 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-03-20 01:21:04.769  INFO 3268 --- [restartedMain] c.h.m.MitrabhumHighSchoolApplication     : Starting MitrabhumHighSchoolApplication using Java 15.0.1 on DESKTOP-M02F0OH with PID 3268 (C:\Users\AliMandal\development\Projects\Mitrabhum\SpringBootHighSchool\target\classes started by AliMandal in C:\Users\AliMandal\development\Projects\Mitrabhum\SpringBootHighSchool)
+2022-03-20 01:21:04.769 DEBUG 3268 --- [restartedMain] c.h.m.MitrabhumHighSchoolApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-20 01:21:04.769  INFO 3268 --- [restartedMain] c.h.m.MitrabhumHighSchoolApplication     : The following profiles are active: dev
+2022-03-20 01:21:05.194  INFO 3268 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-20 01:21:05.222  INFO 3268 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 3 JPA repository interfaces.
+2022-03-20 01:21:05.366  INFO 3268 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8008 (http)
+2022-03-20 01:21:05.367  INFO 3268 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-20 01:21:05.368  INFO 3268 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-03-20 01:21:05.419  INFO 3268 --- [restartedMain] o.a.c.c.C.[.[.[/mitrabhum-dev]           : Initializing Spring embedded WebApplicationContext
+2022-03-20 01:21:05.420  INFO 3268 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 635 ms
+2022-03-20 01:21:05.461  INFO 3268 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2022-03-20 01:21:05.465  INFO 3268 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2022-03-20 01:21:05.465  INFO 3268 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:mitrabhum'
+2022-03-20 01:21:05.481 TRACE 3268 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Added existing Filter initializer bean 'webMvcMetricsFilter'; order=-2147483647, resource=class path resource [org/springframework/boot/actuate/autoconfigure/metrics/web/servlet/WebMvcMetricsAutoConfiguration.class]
+2022-03-20 01:21:05.481 TRACE 3268 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Added existing Servlet initializer bean 'dispatcherServletRegistration'; order=2147483647, resource=class path resource [org/springframework/boot/autoconfigure/web/servlet/DispatcherServletAutoConfiguration$DispatcherServletRegistrationConfiguration.class]
+2022-03-20 01:21:05.481 TRACE 3268 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Added existing Servlet initializer bean 'h2Console'; order=2147483647, resource=class path resource [org/springframework/boot/autoconfigure/h2/H2ConsoleAutoConfiguration.class]
+2022-03-20 01:21:05.482 TRACE 3268 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Added existing ServletContextInitializer initializer bean 'servletEndpointRegistrar'; order=2147483647, resource=class path resource [org/springframework/boot/actuate/autoconfigure/endpoint/web/ServletEndpointManagementContextConfiguration$WebMvcServletEndpointManagementContextConfiguration.class]
+2022-03-20 01:21:05.489 TRACE 3268 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Created Filter initializer for bean 'characterEncodingFilter'; order=-2147483648, resource=class path resource [org/springframework/boot/autoconfigure/web/servlet/HttpEncodingAutoConfiguration.class]
+2022-03-20 01:21:05.489 TRACE 3268 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Created Filter initializer for bean 'formContentFilter'; order=-9900, resource=class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration.class]
+2022-03-20 01:21:05.489 TRACE 3268 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Created Filter initializer for bean 'requestContextFilter'; order=-105, resource=class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]
+2022-03-20 01:21:05.493 DEBUG 3268 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: filterRegistrationBean urls=[/*] order=-2147483647, characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2022-03-20 01:21:05.493 DEBUG 3268 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], webServlet urls=[/h2-console/*]
+2022-03-20 01:21:05.522  INFO 3268 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-03-20 01:21:05.532  INFO 3268 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-03-20 01:21:05.610  INFO 3268 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-03-20 01:21:05.610  INFO 3268 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-20 01:21:05.806  WARN 3268 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-20 01:21:05.854 DEBUG 3268 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-03-20 01:21:05.862 TRACE 3268 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.h.m.c.DepartmentController:
+	{POST [/department/create]}: createDepartment(Department)
+	{GET [/department/getAll]}: getDepartments()
+2022-03-20 01:21:05.864 TRACE 3268 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.h.m.c.StudentController:
+	{GET [/student/getAll/page/{offset}/{pageSize}]}: getStudentsWithPagination(int,int)
+	{GET [/student/get/{studentId}], produces [application/json]}: getStudent(int)
+	{GET [/student/getAll], produces [application/json]}: getStudents()
+	{GET [/student/getAll/sorted/{sortingField}]}: getStudentsSorted(String)
+	{POST [/student/create]}: createStudent(Student)
+	{GET [/student/count], produces [application/json]}: countStudentsById()
+	{DELETE [/student/delete/{studentId}]}: deleteStudent(int)
+	{GET [/student/getAll/page/{offset}/{pageSize}/{sortingField}]}: getStudentsWithPaginationAndSorting(int,int,String)
+2022-03-20 01:21:05.870 TRACE 3268 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.h.m.c.TeacherController:
+	{GET [/teacher/getAll], produces [application/json]}: getTeachers()
+	{DELETE [/teacher/delete/{teacherService}]}: deleteTeacher(int)
+	{POST [/teacher/create]}: createTeacher(Teacher)
+	{GET [/teacher/get/{teacherService}], produces [application/json]}: getTeacher(int)
+2022-03-20 01:21:05.874 TRACE 3268 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+2022-03-20 01:21:05.878 TRACE 3268 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.w.a.OpenApiWebMvcResource:
+	{GET [/v3/api-docs], produces [application/json]}: openapiJson(HttpServletRequest,String,Locale)
+	{GET [/v3/api-docs.yaml], produces [application/vnd.oai.openapi]}: openapiYaml(HttpServletRequest,String,Locale)
+2022-03-20 01:21:05.880 TRACE 3268 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.w.u.SwaggerWelcomeWebMvc:
+	{GET [/swagger-ui.html]}: redirectToUi(HttpServletRequest)
+2022-03-20 01:21:05.881 TRACE 3268 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.w.u.SwaggerConfigResource:
+	{GET [/v3/api-docs/swagger-config], produces [application/json]}: openapiJson(HttpServletRequest)
+2022-03-20 01:21:05.883 DEBUG 3268 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 20 mappings in 'requestMappingHandlerMapping'
+2022-03-20 01:21:05.895 DEBUG 3268 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Detected 0 mappings in 'beanNameHandlerMapping'
+2022-03-20 01:21:05.898 TRACE 3268 --- [restartedMain] o.s.w.s.f.support.RouterFunctionMapping  : 0 RouterFunction(s) in 'routerFunctionMapping'
+2022-03-20 01:21:06.312 TRACE 3268 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/webjars/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2022-03-20 01:21:06.320 TRACE 3268 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-03-20 01:21:06.321 TRACE 3268 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/swagger-ui*/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2022-03-20 01:21:06.321 DEBUG 3268 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/**] in 'resourceHandlerMapping'
+2022-03-20 01:21:06.328 DEBUG 3268 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-03-20 01:21:06.398  INFO 3268 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-03-20 01:21:06.401  INFO 3268 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-03-20 01:21:06.402 TRACE 3268 --- [restartedMain] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Register "{GET [/actuator/health/**], produces [application/vnd.spring-boot.actuator.v3+json || application/vnd.spring-boot.actuator.v2+json || application/json]}" to java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2022-03-20 01:21:06.403 TRACE 3268 --- [restartedMain] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Register "{GET [/actuator/health], produces [application/vnd.spring-boot.actuator.v3+json || application/vnd.spring-boot.actuator.v2+json || application/json]}" to java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2022-03-20 01:21:06.403 TRACE 3268 --- [restartedMain] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Register "{GET [/actuator], produces [application/vnd.spring-boot.actuator.v3+json || application/vnd.spring-boot.actuator.v2+json || application/json]}" to public java.util.Map<java.lang.String, java.util.Map<java.lang.String, org.springframework.boot.actuate.endpoint.web.Link>> org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping$WebMvcLinksHandler.links(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2022-03-20 01:21:06.417  INFO 3268 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8008 (http) with context path '/mitrabhum-dev'
+2022-03-20 01:21:06.430  INFO 3268 --- [restartedMain] c.h.m.MitrabhumHighSchoolApplication     : Started MitrabhumHighSchoolApplication in 1.698 seconds (JVM running for 85.276)
+2022-03-20 01:21:06.433  INFO 3268 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-03-20 01:21:43.308  INFO 3268 --- [http-nio-8008-exec-1] o.a.c.c.C.[.[.[/mitrabhum-dev]           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-20 01:21:43.309  INFO 3268 --- [http-nio-8008-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-03-20 01:21:43.309 TRACE 3268 --- [http-nio-8008-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.multipart.support.StandardServletMultipartResolver@6fdf7918
+2022-03-20 01:21:43.309 TRACE 3268 --- [http-nio-8008-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver@3c923ba5
+2022-03-20 01:21:43.309 TRACE 3268 --- [http-nio-8008-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.theme.FixedThemeResolver@5c265df3
+2022-03-20 01:21:43.310 TRACE 3268 --- [http-nio-8008-exec-1] o.s.web.servlet.DispatcherServlet        : Detected DefaultRequestToViewNameTranslator
+2022-03-20 01:21:43.310 TRACE 3268 --- [http-nio-8008-exec-1] o.s.web.servlet.DispatcherServlet        : Detected SessionFlashMapManager
+2022-03-20 01:21:43.310 DEBUG 3268 --- [http-nio-8008-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2022-03-20 01:21:43.310  INFO 3268 --- [http-nio-8008-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-03-20 01:21:43.320 TRACE 3268 --- [http-nio-8008-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/mitrabhum-dev/actuator", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2022-03-20 01:21:43.329 TRACE 3268 --- [http-nio-8008-exec-1] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped to Actuator root web endpoint
+2022-03-20 01:21:43.338 TRACE 3268 --- [http-nio-8008-exec-1] o.s.web.method.HandlerMethod             : Arguments: [org.apache.catalina.connector.RequestFacade@78a48b58, org.apache.catalina.connector.ResponseFacade@1bf8c307]
+2022-03-20 01:21:43.343 DEBUG 3268 --- [http-nio-8008-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/vnd.spring-boot.actuator.v3+json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-03-20 01:21:43.351 TRACE 3268 --- [http-nio-8008-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [{_links={self=[Link@5b8f9a1a href = 'http://localhost:8008/mitrabhum-dev/actuator'], health-path=[Link@7e564add href = 'http://localhost:8008/mitrabhum-dev/actuator/health/{*path}'], health=[Link@131667f3 href = 'http://localhost:8008/mitrabhum-dev/actuator/health']}}]
+2022-03-20 01:21:43.384 TRACE 3268 --- [http-nio-8008-exec-1] s.w.s.m.m.a.RequestMappingHandlerAdapter : Applying default cacheSeconds=-1
+2022-03-20 01:21:43.385 TRACE 3268 --- [http-nio-8008-exec-1] o.s.web.servlet.DispatcherServlet        : No view rendering, null ModelAndView returned.
+2022-03-20 01:21:43.385 DEBUG 3268 --- [http-nio-8008-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK, headers={masked}
+2022-03-20 01:21:55.993 TRACE 3268 --- [http-nio-8008-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/mitrabhum-dev/actuator/health", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2022-03-20 01:21:55.995 TRACE 3268 --- [http-nio-8008-exec-3] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped to Actuator web endpoint 'health'
+2022-03-20 01:21:56.000 TRACE 3268 --- [http-nio-8008-exec-3] o.s.web.method.HandlerMethod             : Arguments: [org.apache.catalina.connector.RequestFacade@78a48b58, null]
+2022-03-20 01:21:56.022 DEBUG 3268 --- [http-nio-8008-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-03-20 01:21:56.035 TRACE 3268 --- [http-nio-8008-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@44e6390c]
+2022-03-20 01:21:56.038 TRACE 3268 --- [http-nio-8008-exec-3] s.w.s.m.m.a.RequestMappingHandlerAdapter : Applying default cacheSeconds=-1
+2022-03-20 01:21:56.038 TRACE 3268 --- [http-nio-8008-exec-3] o.s.web.servlet.DispatcherServlet        : No view rendering, null ModelAndView returned.
+2022-03-20 01:21:56.038 DEBUG 3268 --- [http-nio-8008-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK, headers={masked}
+2022-03-20 01:23:07.987  INFO 1136 --- [restartedMain] c.h.m.MitrabhumHighSchoolApplication     : Starting MitrabhumHighSchoolApplication using Java 15.0.1 on DESKTOP-M02F0OH with PID 1136 (C:\Users\AliMandal\development\Projects\Mitrabhum\SpringBootHighSchool\target\classes started by AliMandal in C:\Users\AliMandal\development\Projects\Mitrabhum\SpringBootHighSchool)
+2022-03-20 01:23:07.988 DEBUG 1136 --- [restartedMain] c.h.m.MitrabhumHighSchoolApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-20 01:23:07.988  INFO 1136 --- [restartedMain] c.h.m.MitrabhumHighSchoolApplication     : The following profiles are active: dev
+2022-03-20 01:23:08.041  INFO 1136 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-20 01:23:09.280  INFO 1136 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-20 01:23:09.365  INFO 1136 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 72 ms. Found 3 JPA repository interfaces.
+2022-03-20 01:23:10.222  INFO 1136 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8008 (http)
+2022-03-20 01:23:10.236  INFO 1136 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-20 01:23:10.237  INFO 1136 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-03-20 01:23:10.371  INFO 1136 --- [restartedMain] o.a.c.c.C.[.[.[/mitrabhum-dev]           : Initializing Spring embedded WebApplicationContext
+2022-03-20 01:23:10.371  INFO 1136 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2330 ms
+2022-03-20 01:23:10.525  INFO 1136 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-03-20 01:23:10.727  INFO 1136 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-03-20 01:23:10.740  INFO 1136 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:mitrabhum'
+2022-03-20 01:23:10.771 TRACE 1136 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Added existing Filter initializer bean 'webMvcMetricsFilter'; order=-2147483647, resource=class path resource [org/springframework/boot/actuate/autoconfigure/metrics/web/servlet/WebMvcMetricsAutoConfiguration.class]
+2022-03-20 01:23:10.771 TRACE 1136 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Added existing Servlet initializer bean 'dispatcherServletRegistration'; order=2147483647, resource=class path resource [org/springframework/boot/autoconfigure/web/servlet/DispatcherServletAutoConfiguration$DispatcherServletRegistrationConfiguration.class]
+2022-03-20 01:23:10.772 TRACE 1136 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Added existing Servlet initializer bean 'h2Console'; order=2147483647, resource=class path resource [org/springframework/boot/autoconfigure/h2/H2ConsoleAutoConfiguration.class]
+2022-03-20 01:23:10.773 TRACE 1136 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Added existing ServletContextInitializer initializer bean 'servletEndpointRegistrar'; order=2147483647, resource=class path resource [org/springframework/boot/actuate/autoconfigure/endpoint/web/ServletEndpointManagementContextConfiguration$WebMvcServletEndpointManagementContextConfiguration.class]
+2022-03-20 01:23:10.782 TRACE 1136 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Created Filter initializer for bean 'characterEncodingFilter'; order=-2147483648, resource=class path resource [org/springframework/boot/autoconfigure/web/servlet/HttpEncodingAutoConfiguration.class]
+2022-03-20 01:23:10.782 TRACE 1136 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Created Filter initializer for bean 'formContentFilter'; order=-9900, resource=class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration.class]
+2022-03-20 01:23:10.782 TRACE 1136 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Created Filter initializer for bean 'requestContextFilter'; order=-105, resource=class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]
+2022-03-20 01:23:10.788 DEBUG 1136 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: filterRegistrationBean urls=[/*] order=-2147483647, characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2022-03-20 01:23:10.788 DEBUG 1136 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], webServlet urls=[/h2-console/*]
+2022-03-20 01:23:10.979  INFO 1136 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-03-20 01:23:11.038  INFO 1136 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.4.Final
+2022-03-20 01:23:11.249  INFO 1136 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-03-20 01:23:11.391  INFO 1136 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-03-20 01:23:12.098  INFO 1136 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-03-20 01:23:12.105  INFO 1136 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-20 01:23:12.592  WARN 1136 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-20 01:23:12.745 DEBUG 1136 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-03-20 01:23:12.826 TRACE 1136 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.h.m.c.DepartmentController:
+	{POST [/department/create]}: createDepartment(Department)
+	{GET [/department/getAll]}: getDepartments()
+2022-03-20 01:23:12.831 TRACE 1136 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.h.m.c.StudentController:
+	{GET [/student/getAll], produces [application/json]}: getStudents()
+	{GET [/student/getAll/sorted/{sortingField}]}: getStudentsSorted(String)
+	{POST [/student/create]}: createStudent(Student)
+	{GET [/student/count], produces [application/json]}: countStudentsById()
+	{DELETE [/student/delete/{studentId}]}: deleteStudent(int)
+	{GET [/student/get/{studentId}], produces [application/json]}: getStudent(int)
+	{GET [/student/getAll/page/{offset}/{pageSize}/{sortingField}]}: getStudentsWithPaginationAndSorting(int,int,String)
+	{GET [/student/getAll/page/{offset}/{pageSize}]}: getStudentsWithPagination(int,int)
+2022-03-20 01:23:12.835 TRACE 1136 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.h.m.c.TeacherController:
+	{DELETE [/teacher/delete/{teacherService}]}: deleteTeacher(int)
+	{POST [/teacher/create]}: createTeacher(Teacher)
+	{GET [/teacher/get/{teacherService}], produces [application/json]}: getTeacher(int)
+	{GET [/teacher/getAll], produces [application/json]}: getTeachers()
+2022-03-20 01:23:12.839 TRACE 1136 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+2022-03-20 01:23:12.859 TRACE 1136 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.w.a.OpenApiWebMvcResource:
+	{GET [/v3/api-docs.yaml], produces [application/vnd.oai.openapi]}: openapiYaml(HttpServletRequest,String,Locale)
+	{GET [/v3/api-docs], produces [application/json]}: openapiJson(HttpServletRequest,String,Locale)
+2022-03-20 01:23:12.862 TRACE 1136 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.w.u.SwaggerWelcomeWebMvc:
+	{GET [/swagger-ui.html]}: redirectToUi(HttpServletRequest)
+2022-03-20 01:23:12.864 TRACE 1136 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.w.u.SwaggerConfigResource:
+	{GET [/v3/api-docs/swagger-config], produces [application/json]}: openapiJson(HttpServletRequest)
+2022-03-20 01:23:12.868 DEBUG 1136 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 20 mappings in 'requestMappingHandlerMapping'
+2022-03-20 01:23:12.888 DEBUG 1136 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Detected 0 mappings in 'beanNameHandlerMapping'
+2022-03-20 01:23:12.893 TRACE 1136 --- [restartedMain] o.s.w.s.f.support.RouterFunctionMapping  : 0 RouterFunction(s) in 'routerFunctionMapping'
+2022-03-20 01:23:13.602 TRACE 1136 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/webjars/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2022-03-20 01:23:13.602 TRACE 1136 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-03-20 01:23:13.603 TRACE 1136 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/swagger-ui*/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2022-03-20 01:23:13.603 DEBUG 1136 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/**] in 'resourceHandlerMapping'
+2022-03-20 01:23:13.615 DEBUG 1136 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-03-20 01:23:13.900  INFO 1136 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-03-20 01:23:13.908  INFO 1136 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-03-20 01:23:13.911 TRACE 1136 --- [restartedMain] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Register "{GET [/actuator/health/**], produces [application/vnd.spring-boot.actuator.v3+json || application/vnd.spring-boot.actuator.v2+json || application/json]}" to java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2022-03-20 01:23:13.912 TRACE 1136 --- [restartedMain] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Register "{GET [/actuator/health], produces [application/vnd.spring-boot.actuator.v3+json || application/vnd.spring-boot.actuator.v2+json || application/json]}" to java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2022-03-20 01:23:13.913 TRACE 1136 --- [restartedMain] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Register "{GET [/actuator], produces [application/vnd.spring-boot.actuator.v3+json || application/vnd.spring-boot.actuator.v2+json || application/json]}" to public java.util.Map<java.lang.String, java.util.Map<java.lang.String, org.springframework.boot.actuate.endpoint.web.Link>> org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping$WebMvcLinksHandler.links(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2022-03-20 01:23:13.963  INFO 1136 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8008 (http) with context path '/mitrabhum-dev'
+2022-03-20 01:23:13.980  INFO 1136 --- [restartedMain] c.h.m.MitrabhumHighSchoolApplication     : Started MitrabhumHighSchoolApplication in 6.415 seconds (JVM running for 6.938)
+2022-03-20 01:24:24.105  INFO 2316 --- [restartedMain] c.h.m.MitrabhumHighSchoolApplication     : Starting MitrabhumHighSchoolApplication using Java 15.0.1 on DESKTOP-M02F0OH with PID 2316 (C:\Users\AliMandal\development\Projects\Mitrabhum\SpringBootHighSchool\target\classes started by AliMandal in C:\Users\AliMandal\development\Projects\Mitrabhum\SpringBootHighSchool)
+2022-03-20 01:24:24.106  INFO 2316 --- [restartedMain] c.h.m.MitrabhumHighSchoolApplication     : The following profiles are active: prod
+2022-03-20 01:24:24.167  INFO 2316 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-20 01:24:24.167  INFO 2316 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-20 01:24:25.357  INFO 2316 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-20 01:24:25.438  INFO 2316 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 71 ms. Found 3 JPA repository interfaces.
+2022-03-20 01:24:26.273  INFO 2316 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8007 (http)
+2022-03-20 01:24:26.285  INFO 2316 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-20 01:24:26.286  INFO 2316 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-03-20 01:24:26.424  INFO 2316 --- [restartedMain] o.a.c.c.C.[.[.[/mitrabhum-prod]          : Initializing Spring embedded WebApplicationContext
+2022-03-20 01:24:26.425  INFO 2316 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2256 ms
+2022-03-20 01:24:26.586  INFO 2316 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-03-20 01:24:27.059  INFO 2316 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-03-20 01:24:27.077  INFO 2316 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/mitrabhum'
+2022-03-20 01:24:27.370  INFO 2316 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-03-20 01:24:27.465  INFO 2316 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.4.Final
+2022-03-20 01:24:27.694  INFO 2316 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-03-20 01:24:27.835  INFO 2316 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-03-20 01:24:28.539  WARN 2316 --- [restartedMain] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "alter table student drop foreign key FKnnas2p18k2na0q4uf1yth7ttt" via JDBC Statement
+
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table student drop foreign key FKnnas2p18k2na0q4uf1yth7ttt" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.6.4.Final.jar:5.6.4.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:387) ~[hibernate-core-5.6.4.Final.jar:5.6.4.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:371) ~[hibernate-core-5.6.4.Final.jar:5.6.4.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:341) ~[hibernate-core-5.6.4.Final.jar:5.6.4.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:235) ~[hibernate-core-5.6.4.Final.jar:5.6.4.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:156) ~[hibernate-core-5.6.4.Final.jar:5.6.4.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:128) ~[hibernate-core-5.6.4.Final.jar:5.6.4.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:114) ~[hibernate-core-5.6.4.Final.jar:5.6.4.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:153) ~[hibernate-core-5.6.4.Final.jar:5.6.4.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:81) ~[hibernate-core-5.6.4.Final.jar:5.6.4.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335) ~[hibernate-core-5.6.4.Final.jar:5.6.4.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471) ~[hibernate-core-5.6.4.Final.jar:5.6.4.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498) ~[hibernate-core-5.6.4.Final.jar:5.6.4.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.15.jar:5.3.15]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.15.jar:5.3.15]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.15.jar:5.3.15]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.15.jar:5.3.15]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.15.jar:5.3.15]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.15.jar:5.3.15]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.15.jar:5.3.15]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.15.jar:5.3.15]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.15.jar:5.3.15]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.15.jar:5.3.15]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.15.jar:5.3.15]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.15.jar:5.3.15]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.15.jar:5.3.15]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.15.jar:5.3.15]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.15.jar:5.3.15]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.15.jar:5.3.15]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732) ~[spring-boot-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:414) ~[spring-boot-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:302) ~[spring-boot-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) ~[spring-boot-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) ~[spring-boot-2.6.3.jar:2.6.3]
+	at com.highschool.mitrabhum.MitrabhumHighSchoolApplication.main(MitrabhumHighSchoolApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.6.3.jar:2.6.3]
+Caused by: java.sql.SQLSyntaxErrorException: Table 'mitrabhum.student' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.28.jar:8.0.28]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.28.jar:8.0.28]
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763) ~[mysql-connector-java-8.0.28.jar:8.0.28]
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648) ~[mysql-connector-java-8.0.28.jar:8.0.28]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-4.0.3.jar:na]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.6.4.Final.jar:5.6.4.Final]
+	... 40 common frames omitted
+
+2022-03-20 01:24:28.543  WARN 2316 --- [restartedMain] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "alter table teacher drop foreign key FKgh66j0a8ixtmrb010mb3ns5c3" via JDBC Statement
+
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table teacher drop foreign key FKgh66j0a8ixtmrb010mb3ns5c3" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.6.4.Final.jar:5.6.4.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:387) ~[hibernate-core-5.6.4.Final.jar:5.6.4.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:371) ~[hibernate-core-5.6.4.Final.jar:5.6.4.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:341) ~[hibernate-core-5.6.4.Final.jar:5.6.4.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:235) ~[hibernate-core-5.6.4.Final.jar:5.6.4.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:156) ~[hibernate-core-5.6.4.Final.jar:5.6.4.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:128) ~[hibernate-core-5.6.4.Final.jar:5.6.4.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:114) ~[hibernate-core-5.6.4.Final.jar:5.6.4.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:153) ~[hibernate-core-5.6.4.Final.jar:5.6.4.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:81) ~[hibernate-core-5.6.4.Final.jar:5.6.4.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335) ~[hibernate-core-5.6.4.Final.jar:5.6.4.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471) ~[hibernate-core-5.6.4.Final.jar:5.6.4.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498) ~[hibernate-core-5.6.4.Final.jar:5.6.4.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.15.jar:5.3.15]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.15.jar:5.3.15]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.15.jar:5.3.15]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.15.jar:5.3.15]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.15.jar:5.3.15]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.15.jar:5.3.15]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.15.jar:5.3.15]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.15.jar:5.3.15]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.15.jar:5.3.15]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.15.jar:5.3.15]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.15.jar:5.3.15]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.15.jar:5.3.15]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.15.jar:5.3.15]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.15.jar:5.3.15]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.15.jar:5.3.15]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.15.jar:5.3.15]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732) ~[spring-boot-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:414) ~[spring-boot-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:302) ~[spring-boot-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) ~[spring-boot-2.6.3.jar:2.6.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) ~[spring-boot-2.6.3.jar:2.6.3]
+	at com.highschool.mitrabhum.MitrabhumHighSchoolApplication.main(MitrabhumHighSchoolApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.6.3.jar:2.6.3]
+Caused by: java.sql.SQLSyntaxErrorException: Table 'mitrabhum.teacher' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.28.jar:8.0.28]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.28.jar:8.0.28]
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763) ~[mysql-connector-java-8.0.28.jar:8.0.28]
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648) ~[mysql-connector-java-8.0.28.jar:8.0.28]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-4.0.3.jar:na]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.6.4.Final.jar:5.6.4.Final]
+	... 40 common frames omitted
+
+2022-03-20 01:24:28.899  INFO 2316 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-03-20 01:24:28.907  INFO 2316 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-20 01:24:29.428  WARN 2316 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-20 01:24:30.712  WARN 2316 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2022-03-20 01:24:30.721  INFO 2316 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-03-20 01:24:30.780  INFO 2316 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8007 (http) with context path '/mitrabhum-prod'
+2022-03-20 01:24:30.801  INFO 2316 --- [restartedMain] c.h.m.MitrabhumHighSchoolApplication     : Started MitrabhumHighSchoolApplication in 7.103 seconds (JVM running for 7.618)
+2022-03-20 01:25:18.435  INFO 2316 --- [http-nio-8007-exec-1] o.a.c.c.C.[.[.[/mitrabhum-prod]          : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-20 01:25:18.435  INFO 2316 --- [http-nio-8007-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-03-20 01:25:18.436  INFO 2316 --- [http-nio-8007-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-03-20 01:25:19.233  INFO 2316 --- [http-nio-8007-exec-8] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 408 ms
